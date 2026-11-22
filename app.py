@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # --- CONFIGURATION ---
 # Paste your NEW Groq API key here
-GROQ_API_KEY = "YOUR_NEW_GROQ_API_KEY"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 client = Groq(api_key=GROQ_API_KEY)
 
 @app.route('/', methods=['GET', 'POST'])
